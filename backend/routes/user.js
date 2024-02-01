@@ -120,7 +120,7 @@ router.put("/", authMiddleware, async (req, res) => {
 });
 
 router.get("/bulk",async (req,res)=>{
-    const filter = req.query || "" ;
+    const {filter=""} = req.query
 
     const regex = new RegExp(filter,'i');
     
@@ -143,7 +143,13 @@ router.get("/bulk",async (req,res)=>{
     res.status(200).json({
         users:finalUser
     })
-   
+})
+
+router.get("/one",authMiddleware,async (req,res)=>{
+    const user = await User.findById(req.userId);
+    res.json({
+        user:user
+    });
 })
 
 module.exports = router;

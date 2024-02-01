@@ -8,10 +8,10 @@ const mongoose = require("mongoose")
 const router = express.Router();
 
 router.get("/balance",authMiddleware,async (req,res)=>{
-    const {userId} = req.userId;
+    const userId = req.userId;
     const userAccount = await Account.findOne({userId:userId});
     return res.json({
-        amount:userAccount.amount
+        amount:userAccount.balance
     })
 })
 

@@ -1,5 +1,6 @@
 import Icon from "./Icon";
 import SearchBar from "./SearchBar";
+import User from "./User";
 
 export default function Navbar({user,amount}) {
   return (
@@ -28,6 +29,10 @@ export default function Navbar({user,amount}) {
         <div className="mt-10">
         <SearchBar placeholder={"Enter User..."}/>
 
+        </div>
+        <div className="mt-3">
+
+        <User/>
         </div>
         
     </div>
