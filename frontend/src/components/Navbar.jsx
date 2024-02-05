@@ -3,6 +3,13 @@ import SearchBar from "./SearchBar";
 import User from "./User";
 
 export default function Navbar({user,amount}) {
+
+  function onchange(e){
+    console.log(e.target.value);
+
+  }
+
+
   return (
 
     <div>
@@ -27,8 +34,7 @@ export default function Navbar({user,amount}) {
         <h1 className="text-2xl mt-16 font-semibold">Users</h1>
         
         <div className="mt-10">
-        <SearchBar placeholder={"Enter User..."}/>
-
+        <SearchBar placeholder={"Enter User..."} onchange={onchange}/>
         </div>
         <div className="mt-3">
 
